@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Deezer Playlist Remaker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Bandeau supérieur avec le titre et les infos de la playlist -->
+  <header>
+    <div id="header-content">
+      <h1>Deezer Playlist Remaker</h1>
+      <div id="playlist-info" style="display: none;">
+        <img id="playlist-cover" src="" alt="Cover de la playlist">
+        <h2 id="playlist-title"></h2>
+      </div>
+    </div>
+  </header>
+
+  <!-- Zone de saisie qui disparaît après chargement -->
+  <div id="playlist-input-container">
+    <input type="text" id="playlist-input" placeholder="Entrez l'ID ou le lien de la playlist">
+    <button id="load-playlist">Charger</button>
+  </div>
+
+  <!-- Zone de sélection des morceaux -->
+  <div id="track-section" style="display:none;">
+    <div id="track-container">
+      <img id="track-album-cover" src="" alt="Cover de l'album">
+      <p id="track-title"></p>
+      <audio id="track-preview" controls></audio>
+      <div id="track-actions">
+        <button id="keep-track">Garder</button>
+        <button id="delete-track">Supprimer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section finale pour télécharger le JSON -->
+  <div id="end-section" style="display:none;">
+    <p>Fin de la playlist.</p>
+    <button id="download-json">Télécharger JSON</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
