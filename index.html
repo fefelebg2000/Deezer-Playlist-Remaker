@@ -6,41 +6,60 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Bandeau supérieur avec le titre et les infos de la playlist -->
+  <!-- Bandeau supérieur avec le titre et, une fois chargée, les infos de la playlist en petit -->
   <header>
     <div id="header-content">
       <h1>Deezer Playlist Remaker</h1>
-      <div id="playlist-info" style="display: none;">
+      <div id="playlist-info" class="small-info" style="display:none;">
         <img id="playlist-cover" src="" alt="Cover de la playlist">
         <h2 id="playlist-title"></h2>
       </div>
     </div>
   </header>
 
-  <!-- Zone de saisie qui disparaît après chargement -->
+  <!-- Zone de saisie pour l'ID / URL de la playlist -->
   <div id="playlist-input-container">
     <input type="text" id="playlist-input" placeholder="Entrez l'ID ou le lien de la playlist">
     <button id="load-playlist">Charger</button>
   </div>
 
-  <!-- Zone de sélection des morceaux -->
-  <div id="track-section" style="display:none;">
+  <!-- Section de revue des morceaux -->
+  <section id="review-section" style="display:none;">
+    <!-- Compteur -->
+    <div id="counter"></div>
+    
     <div id="track-container">
       <img id="track-album-cover" src="" alt="Cover de l'album">
       <p id="track-title"></p>
       <audio id="track-preview" controls></audio>
-      <div id="track-actions">
-        <button id="keep-track">Garder</button>
-        <button id="delete-track">Supprimer</button>
+      
+      <!-- Boutons de décision -->
+      <div id="decision-buttons">
+        <button id="keep-track" data-decision="keep">Garder</button>
+        <button id="like-track" data-decision="like">❤️</button>
+        <button id="delete-track" data-decision="delete">Supprimer</button>
       </div>
+      
+      <!-- Bouton Retour pour revenir en arrière -->
+      <button id="back-button">Retour</button>
     </div>
-  </div>
+  </section>
 
-  <!-- Section finale pour télécharger le JSON -->
-  <div id="end-section" style="display:none;">
-    <p>Fin de la playlist.</p>
-    <button id="download-json">Télécharger JSON</button>
-  </div>
+  <!-- Confirmation de suppression -->
+  <section id="confirmation-section" style="display:none;">
+    <h2>Confirmation de suppression</h2>
+    <p>Les morceaux suivants sont marqués pour suppression :</p>
+    <ul id="delete-list"></ul>
+    <p>Pour chaque morceau, vous pouvez annuler la suppression en cliquant sur "Annuler".</p>
+    <button id="finalize">Finaliser et Télécharger JSON</button>
+  </section>
+
+  <!-- Footer pour crédits / infos -->
+  <footer>
+    <div id="footer-content">
+      <!-- Laissez vide pour l'instant -->
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
